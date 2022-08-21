@@ -18,7 +18,7 @@ export const getStaticProps = async () => {
 const Home = ({ productList }) => {
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} data-testid="container">
         <HeadSeoTags title="Decathlon Sports Philippines | Buy Sports Products Online Now..." />
 
         <Header />
