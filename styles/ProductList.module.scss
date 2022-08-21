@@ -5,10 +5,11 @@
     margin: 50px auto;
     &__item {
         flex: 0 0 44.5%;
-        margin: 20px 10px 50px;
         width: 95%;
-        border: 1px solid #f6f6f6;
         border-radius: .5rem;
+        border: 1px solid  #d9d9d9; 
+        margin: 20px 10px 50px;
+        padding: .1rem;
         .image_wrapper {
             text-align: center;
         }
