@@ -3,6 +3,7 @@ const token = process.env.NEXT_PUBLIC_TOKEN;
 
 const ROUTE = {
   products: "/product",
+  productInformation: "/product/:productId",
   stocks: "/stock?filterByFormula=ProductID+%3D+:productId",
   reviews: "/reviews?filterByFormula=ProductID+%3D+:productId",
 };
@@ -27,14 +28,21 @@ export async function getProductList() {
   return productList;
 }
 
+export async function getProductInformation(productId) {
+  let productDetails = await apiCall(
+    ROUTE.productInformation.replace(":productId", productId)
+  );
+  return productDetails;
+}
+
 export async function getStocks(productId) {
   let stocks = await apiCall(ROUTE.stocks.replace(":productId", productId));
   return stocks;
 }
 
-export async function getReviews() {
+export async function getReviews(productId) {
   let reviewList = await apiCall(
-    ROUTE.reviewList.replace(":productId", productId)
+    ROUTE.reviews.replace(":productId", productId)
   );
   return reviewList;
 }
