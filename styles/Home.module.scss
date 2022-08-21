@@ -1,7 +1,10 @@
-.main {
-    margin: 3em .1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.container {
+  height: 100vh;
+  .main {
+      margin: 3em .1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+}
