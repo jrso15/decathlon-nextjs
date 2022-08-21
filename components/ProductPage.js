@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.scss";
 
 const ProductPage = ({ information, stocks, reviews }) => {
   return (
-    <>
+    <div className={styles.container}>
       <Header />
 
       <main className={styles.main}>
@@ -14,7 +14,7 @@ const ProductPage = ({ information, stocks, reviews }) => {
           reviews={reviews}
         />
       </main>
-    </>
+    </div>
   );
 };
 
