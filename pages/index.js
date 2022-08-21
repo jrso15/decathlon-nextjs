@@ -1,5 +1,5 @@
-import Head from "../components/Head";
-import Header from "../components/header";
+import HeadSeoTags from "../components/HeadSeoTags";
+import Header from "../components/Header";
 import ProductList from "../components/ProductList";
 import styles from "../styles/Home.module.scss";
 import { getProductList } from "../pages/api/decathlon-api";
@@ -17,7 +17,7 @@ export const getStaticProps = async () => {
 const Home = ({ productList }) => {
   return (
     <div className={styles.container}>
-      <Head title="Decathlon Sports Philippines | Buy Sports Products Online Now..." />
+      <HeadSeoTags title="Decathlon Sports Philippines | Buy Sports Products Online Now..." />
 
       <Header />
 

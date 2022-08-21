@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const Header = ({ title }) => {
+const HeadSeoTags = ({ title }) => {
   const url = process.env.SITE_URL;
   const og_image = "./logo.svg";
   const keywords = "Sports";
@@ -35,4 +35,4 @@ const Header = ({ title }) => {
   );
 };
 
-export default Header;
+export default HeadSeoTags;
