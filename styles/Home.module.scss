@@ -1,9 +1,10 @@
 .container {
+  height: 100vh;
   .main {
-    margin: 5em .1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+      margin: 3em .1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 }

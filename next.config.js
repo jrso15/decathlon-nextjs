@@ -4,6 +4,11 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: "",
+    loader: "imgix",
+    path: "",
+  },
   exportPathMap: function () {
     return {
       "/": { page: "/" },

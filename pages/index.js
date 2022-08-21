@@ -1,19 +1,34 @@
-import Head from "../components/Head";
-import Header from "../components/header";
+import HeadSeoTags from "../components/HeadSeoTags";
+import Header from "../components/Header";
 import ProductList from "../components/ProductList";
+import Footer from "../components/Footer";
 import styles from "../styles/Home.module.scss";
+import { getProductList } from "../pages/api/decathlon-api";
 
-const Home = () => {
+export const getStaticProps = async () => {
+  let productList = await getProductList();
+
+  return {
+    props: {
+      productList,
+    },
+  };
+};
+
+const Home = ({ productList }) => {
   return (
-    <div className={styles.container}>
-      <Head title="Decathlon Sports Philippines | Buy Sports Products Online Now..." />
+    <>
+      <div className={styles.container}>
+        <HeadSeoTags title="Decathlon Sports Philippines | Buy Sports Products Online Now..." />
 
-      <Header />
+        <Header />
 
-      <main className={styles.main}>
-        <ProductList />
-      </main>
-    </div>
+        <main className={styles.main}>
+          <ProductList productList={productList} />
+        </main>
+      </div>
+      <Footer />
+    </>
   );
 };
 
