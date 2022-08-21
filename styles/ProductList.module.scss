@@ -9,12 +9,14 @@
         border-radius: .5rem;
         border: 1px solid  #d9d9d9; 
         margin: 20px 10px 50px;
-        padding: .1rem;
+        padding: .1rem .1rem .5rem;
+        cursor: pointer;
+
         .image_wrapper {
             text-align: center;
         }
 
-        .product_details {
+        .details {
             padding: .5rem;
             margin-top: 1rem;
             .price {
@@ -38,7 +40,18 @@
                     background: #ffea29;
                 }
             }
-        
+
+            .brand {
+                margin-top: 1.5em;
+                font-size: 1rem;
+                text-transform: uppercase;
+                color: #424453;
+                font-weight: normal;
+            }
+            .productName {
+                font-size: 1.2rem;
+                color: #424453;
+            } 
         }
     }
 }
@@ -46,12 +59,17 @@
 
 @media only screen and (min-width: 768px) {
     .productListContainer {
-        width: 80%;
         display:  flex;
         justify-content: center;
         flex-wrap: nowrap;
         &__item {
             flex: auto;
         }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .productListContainer {
+        width: 80%;
     }
 }

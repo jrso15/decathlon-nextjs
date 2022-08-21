@@ -5,6 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     overflow-x: hidden;
+    background-color: #f7f7f7;
 }
 
 a {
@@ -12,7 +13,7 @@ a {
   text-decoration: none;
 }
 
-p {
+p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 

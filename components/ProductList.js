@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { getProductList } from "../pages/api/decathlon-api";
 import styles from "../styles/ProductList.module.scss";
 
-const loader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
-};
 const ProductList = ({ productList }) => {
   console.log("listDDddd", productList);
+
+  const loader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`;
+  };
 
   return (
     <div className={styles.productListContainer}>
@@ -24,12 +23,13 @@ const ProductList = ({ productList }) => {
                 height={150}
               />
             </div>
-            <div className={styles.product_details}>
+
+            <div className={styles.details}>
               <div className={styles.price}>
-                <p>{product.fields.Price}</p>
+                <p>PHP {product.fields.Price}</p>
               </div>
-              <h4>{product.fields.Brand}</h4>
-              <h3>{product.fields.Name}</h3>
+              <h3 className={styles.brand}>{product.fields.Brand}</h3>
+              <h2 className={styles.productName}>{product.fields.Name}</h2>
             </div>
           </div>
         </Link>

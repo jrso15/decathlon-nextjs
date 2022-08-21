@@ -1,0 +1,28 @@
+.reviews {
+    &__title {
+        margin-bottom: .5em;
+        text-transform: uppercase;
+        color: #424453
+    }
+    &__list {
+        padding-bottom: 1em;
+        border-bottom: 1px solid  #d9d9d9;
+        .subhead {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1em;
+            .author {
+                font-size: 1em;
+                margin: .5em 0;
+                margin-right: auto;
+            }
+            .rating {
+                display: flex;
+                align-items: center;
+                &__value {
+                    margin-left: .2em;
+                }
+            }
+        }
+    }
+}
