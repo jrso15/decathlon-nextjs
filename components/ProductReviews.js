@@ -18,7 +18,7 @@ const ProductReviews = ({ reviews }) => {
               <Image
                 loader={loader}
                 src="/star.png"
-                alt="logo"
+                alt="star"
                 width={25}
                 height={25}
               />
