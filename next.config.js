@@ -5,9 +5,9 @@ module.exports = {
     defaultLocale: "en",
   },
   images: {
-    domains: "",
+    domains: [],
     loader: "imgix",
-    path: "",
+    path: "https://cdncontent.decathlon.ph",
   },
   exportPathMap: function () {
     return {

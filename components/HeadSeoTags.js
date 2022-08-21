@@ -2,7 +2,8 @@ import Head from "next/head";
 
 const HeadSeoTags = ({ title }) => {
   const url = process.env.SITE_URL;
-  const og_image = "./logo.svg";
+  const og_image =
+    "https://cdncontent.decathlon.ph/_next/static/images/logo-93d12d8cff484ab736d2a39f15bf66d8.svg";
   const keywords = "Sports";
   const description =
     "Decathlon offers affordable sportswear, shoes & gear for over 70 sports. Decathlon Philippines | Online Sports Store For Filipinos. 2-year warranty-all items. 1 year return & exchange. Free return and exchange. Cash on delivery. Types: Hiking, Bikes.";

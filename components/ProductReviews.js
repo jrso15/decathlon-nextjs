@@ -10,7 +10,7 @@ const ProductReviews = ({ reviews }) => {
     <div className={styles.reviews}>
       <h3 className={styles.reviews__title}>Reviews</h3>
 
-      {reviews.records.map((review) => (
+      {reviews?.records.map((review) => (
         <div className={styles.reviews__list} key={review.id}>
           <div className={styles.subhead}>
             <h5 className={styles.author}>{review.fields.Author}</h5>
@@ -18,7 +18,7 @@ const ProductReviews = ({ reviews }) => {
               <Image
                 loader={loader}
                 src="/star.png"
-                alt="logo"
+                alt="star"
                 width={25}
                 height={25}
               />
