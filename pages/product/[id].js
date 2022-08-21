@@ -1,6 +1,4 @@
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import ProductPage from "../../components/ProductPage";
 import {
   getProductList,
   getProductInformation,
@@ -25,7 +23,7 @@ export async function getStaticProps(context) {
   let id = context.params.id;
   let information = await getProductInformation(id);
 
-  const productId = information.fields.Id;
+  const productId = information.fields?.Id;
   let stocks = await getStocks(productId);
   let reviews = await getReviews(productId);
 
@@ -41,11 +39,11 @@ const ProductDetails = ({ information, stocks, reviews }) => {
 
   return (
     <>
-      <ul>
-        {/* <li>test {id}</li> */}
-        {/* {productData.fields.Brand} */}
-        {information.fields.Brand}
-      </ul>
+      <ProductPage
+        information={information}
+        stocks={stocks}
+        reviews={reviews}
+      />
     </>
   );
 };
