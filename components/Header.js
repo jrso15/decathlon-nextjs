@@ -11,8 +11,8 @@ const Header = () => {
             <Image
               src="https://cdncontent.decathlon.ph/_next/static/images/logo-93d12d8cff484ab736d2a39f15bf66d8.svg"
               alt="logo"
-              width={100}
-              height={50}
+              width={180}
+              height={55}
             />
           </div>
         </div>
