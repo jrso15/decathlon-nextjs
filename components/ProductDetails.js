@@ -9,7 +9,7 @@ const ProductDetails = ({ information, stocks, reviews }) => {
 
   const stockLabel = () => {
     const stocksValue =
-      stocks && stocks.record.lenght > 0 ? stocks.records[0].fields.Stock : "";
+      stocks && stocks.records.length > 0 ? stocks.records[0].fields.Stock : "";
 
     const label =
       stocksValue === 0
