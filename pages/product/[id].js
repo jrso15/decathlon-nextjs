@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 };
 
 export async function getStaticProps(context) {
-  let id = context.params.id;
+  let id = context.params.id; // supposed to be slug but no slug in api
   let information = await getProductInformation(id);
 
   const productId = information.fields?.Id;
