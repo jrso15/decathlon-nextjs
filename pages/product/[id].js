@@ -33,10 +33,6 @@ export async function getStaticProps(context) {
 }
 
 const ProductDetails = ({ information, stocks, reviews }) => {
-  console.log("info", information);
-  console.log("stocks", stocks);
-  console.log("reviews", reviews);
-
   return (
     <>
       <ProductPage
