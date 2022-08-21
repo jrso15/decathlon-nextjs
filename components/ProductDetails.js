@@ -27,8 +27,8 @@ const ProductDetails = ({ information, stocks, reviews }) => {
       <div className={styles.productDetails__image_wrapper}>
         <Image
           loader={loader}
-          src={information.fields?.pictures[0].url}
-          alt="logo"
+          src={information?.fields?.pictures[0].url}
+          alt={information?.fields?.Name}
           width={150}
           height={150}
           layout="responsive"
@@ -36,25 +36,25 @@ const ProductDetails = ({ information, stocks, reviews }) => {
       </div>
 
       <div className={styles.productDetails__information}>
-        <h3 className={styles.brand}> {information.fields?.Brand} </h3>
+        <h3 className={styles.brand}> {information?.fields?.Brand} </h3>
 
-        <h1 className={styles.productName}> {information.fields?.Name} </h1>
+        <h1 className={styles.productName}> {information?.fields?.Name} </h1>
 
         <div className={styles.price}>
-          <p>PHP {information.fields?.Price}</p>
+          <p>PHP {information?.fields?.Price}</p>
         </div>
 
         <div className={styles.stocks}>
           <p className={styles.label}>{stockLabel()}</p>
           <p>
-            Stocks: <span>{stocks.records[0].fields?.Stock}</span>
+            Stocks: <span>{stocks?.records[0].fields?.Stock}</span>
           </p>
         </div>
 
         <div className={styles.description_wrapper}>
           <h3 className={styles.title}>Description</h3>
           <p className={styles.description}>
-            {information.fields?.Description}
+            {information?.fields?.Description}
           </p>
         </div>
 
