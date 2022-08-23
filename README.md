@@ -21,9 +21,12 @@ To run the project on your localhost:
   5. Run `npm run dev` to run the project.
   7. Confirm everything is set up properly by opening [http://localhost:3000](http://localhost:3000) in your browser.
   
- ### To Run unit testing ###
- * Just run `npm run test` and look for the results in your terminal.
- 
+  
+### Exposing Environment Variables to the Browser
+- We have to prefix the variable with `NEXT_PUBLIC_` in order to expose a variable to the browser.
+- This loads into the Node.js environment automatically, to use it anywhere in the code. The value will be inlined into JavaScript sent to the browser because of the NEXT_PUBLIC_ prefix. This inlining occurs at build time, so various NEXT_PUBLIC_ envs need to be set when the project is built.
+
+
  ### Data Fetching ###
  * Used `getStaticProps` for rendering data, Next.js will pre-render the page at build time using the props returned by `getStaticProps`.
  * Used `getStaticPaths` for dynamic routes. Next.js will statically pre-render all the paths specified by getStaticPaths.
@@ -63,7 +66,9 @@ useEffect(() => {
 }, []);
 ```
 
-
+### To Run unit testing ###
+ * Used Jest for testing.
+ * Just run `npm run test` and look for the results in your terminal.
 
 ## Deploy on Vercel or Netlify
 Vercel is the fastest way to deploy your Next.js application with zero configuration.
@@ -108,4 +113,7 @@ You can also build a static website with Next.js by adding a `"build": "next bui
    * Copy the link in `Public URL`.
    * If the site is not working, put the buket name in the url like this. `https://<BUCKET_NAME>.storage.googleapis.com/index.html`.
 
+
+# Deployed via Vercel
+Live link: [https://janille-olegario-decathlon-nextjs.vercel.app/](https://janille-olegario-decathlon-nextjs.vercel.app/)
 
