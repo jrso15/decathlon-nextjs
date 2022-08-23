@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/ProductList.module.scss";
+import styles from "../../styles/ProductList.module.scss";
 
 const ProductList = ({ productList }) => {
   const loader = ({ src, width, quality }) => {

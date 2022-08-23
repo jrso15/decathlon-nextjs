@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ProductReviews from "./ProductReviews";
-import styles from "../styles/ProductDetails.module.scss";
+import styles from "../../styles/ProductDetails.module.scss";
 
 const ProductDetails = ({ information, stocks, reviews }) => {
   const loader = ({ src, width, quality }) => {
