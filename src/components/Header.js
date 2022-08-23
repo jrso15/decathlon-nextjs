@@ -3,13 +3,18 @@ import Image from "next/image";
 import styles from "../styles/Header.module.scss";
 
 const Header = () => {
+  const loader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`;
+  };
+
   return (
     <header className={styles.header}>
       <Link href="/">
         <div className={styles.logo}>
           <div className={styles.image}>
             <Image
-              src="https://cdncontent.decathlon.ph/_next/static/images/logo-93d12d8cff484ab736d2a39f15bf66d8.svg"
+              loader={loader}
+              src="/logo.svg"
               alt="logo"
               width={180}
               height={55}
