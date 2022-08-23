@@ -7,20 +7,27 @@ const ProductDetails = ({ information, stocks, reviews }) => {
     return `${src}?w=${width}&q=${quality || 75}`;
   };
 
-  const stocksValue =
+  let stocksValue =
     stocks && stocks.records.length > 0 ? stocks.records[0].fields.Stock : "";
 
   const stockLabel = () => {
-    const label =
-      stocksValue === 0
-        ? "No stock available"
-        : stocksValue <= 10
-        ? `Only ${stocksValue} items available`
-        : stocksValue > 10
-        ? "In Stock"
-        : null;
+    switch (true) {
+      case stocksValue === 0:
+        return <p className={styles.label}>No stock available</p>;
 
-    return label;
+      case stocksValue === 1:
+        return (
+          <p className={styles.label}>Only {stocksValue} item available</p>
+        );
+
+      case stocksValue <= 10:
+        return (
+          <p className={styles.label}>Only {stocksValue} items available</p>
+        );
+
+      default:
+        return <p className={styles.label}>In Stock</p>;
+    }
   };
 
   return (
@@ -37,7 +44,7 @@ const ProductDetails = ({ information, stocks, reviews }) => {
       </div>
 
       <div className={styles.productDetails__information}>
-        <p className={styles.label}>{stockLabel()}</p>
+        {stockLabel()}
         <h3 className={styles.brand}> {information?.fields?.Brand} </h3>
 
         <h1 className={styles.productName}> {information?.fields?.Name} </h1>
