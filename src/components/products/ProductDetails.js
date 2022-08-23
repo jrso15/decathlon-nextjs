@@ -1,16 +1,16 @@
 import Image from "next/image";
 import ProductReviews from "./ProductReviews";
-import styles from "../styles/ProductDetails.module.scss";
+import styles from "../../styles/ProductDetails.module.scss";
 
 const ProductDetails = ({ information, stocks, reviews }) => {
   const loader = ({ src, width, quality }) => {
     return `${src}?w=${width}&q=${quality || 75}`;
   };
 
-  const stockLabel = () => {
-    const stocksValue =
-      stocks && stocks.records.length > 0 ? stocks.records[0].fields.Stock : "";
+  const stocksValue =
+    stocks && stocks.records.length > 0 ? stocks.records[0].fields.Stock : "";
 
+  const stockLabel = () => {
     const label =
       stocksValue === 0
         ? "No stock available"
@@ -37,6 +37,7 @@ const ProductDetails = ({ information, stocks, reviews }) => {
       </div>
 
       <div className={styles.productDetails__information}>
+        <p className={styles.label}>{stockLabel()}</p>
         <h3 className={styles.brand}> {information?.fields?.Brand} </h3>
 
         <h1 className={styles.productName}> {information?.fields?.Name} </h1>
@@ -46,7 +47,6 @@ const ProductDetails = ({ information, stocks, reviews }) => {
         </div>
 
         <div className={styles.stocks}>
-          <p className={styles.label}>{stockLabel()}</p>
           <p>
             Stocks: <span>{stocks?.records[0].fields?.Stock}</span>
           </p>
@@ -58,6 +58,13 @@ const ProductDetails = ({ information, stocks, reviews }) => {
             {information?.fields?.Description}
           </p>
         </div>
+
+        <button
+          className={styles.btnAdd}
+          disabled={stocksValue === 0 ? true : false}
+        >
+          add to cart
+        </button>
 
         <ProductReviews reviews={reviews} />
       </div>

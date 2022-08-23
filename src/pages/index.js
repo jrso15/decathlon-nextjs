@@ -1,6 +1,6 @@
 import HeadSeoTags from "../components/HeadSeoTags";
 import Header from "../components/Header";
-import ProductList from "../components/ProductList";
+import ProductList from "../components/products/ProductList";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.scss";
 import { getProductList } from "../pages/api/decathlon-api";
